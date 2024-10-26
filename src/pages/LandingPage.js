@@ -1,5 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+// Components
+import Card from "../components/card";
+import Modal from "../components/modal";
 
 export default function LandingPage() {
     const [data, setData] = useState(null);
@@ -20,7 +24,7 @@ export default function LandingPage() {
                 params: { q: query },
                 headers: {
                     "x-rapidapi-host": "imdb8.p.rapidapi.com",
-                    "x-rapidapi-key": "18155b999amsh76d498974911f2fp1d7666jsn1de7bf651dc8",
+                    "x-rapidapi-key": "a83c592060mshec17e2c47baba8ap16b49fjsn544bacaf9a6b",
                 },
                 }
             );
@@ -34,7 +38,6 @@ export default function LandingPage() {
         setIsLoading(false);
         }
         };
-        
     if (!isLoaded) {
     fetchData(query);
     }
